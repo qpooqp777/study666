@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>遊戲選單 | Study666</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        :root { --primary: #6366F1; --primary-dark: #4F46E5; --secondary: #8B5CF6; --accent: #EC4899; --bg: #0F172A; --card-bg: #1E293B; --text: #F8FAFC; --text-muted: #94A3B8; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Noto Sans TC', 'Poppins', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; background-image: radial-gradient(ellipse at top, rgba(99, 102, 241, 0.15) 0%, transparent 50%), radial-gradient(ellipse at bottom right, rgba(139, 92, 246, 0.1) 0%, transparent 50%); }
+        .container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
+        header { text-align: center; margin-bottom: 60px; }
+        h1 { font-size: clamp(2rem, 5vw, 3rem); font-weight: 700; background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 50%, var(--accent) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 16px; letter-spacing: -0.02em; }
+        .subtitle { color: var(--text-muted); font-size: clamp(0.9rem, 2vw, 1.1rem); }
+        .game-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 24px; padding: 20px 0; }
+        .game-card { background: var(--card-bg); border-radius: 20px; padding: 32px 24px; text-decoration: none; color: inherit; display: flex; flex-direction: column; align-items: center; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); border: 1px solid rgba(255, 255, 255, 0.05); position: relative; overflow: hidden; }
+        .game-card::before { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, transparent 50%); opacity: 0; transition: opacity 0.3s; }
+        .game-card:hover { transform: translateY(-8px); border-color: var(--primary); box-shadow: 0 20px 40px rgba(99, 102, 241, 0.2); }
+        .game-card:hover::before { opacity: 1; }
+        .game-icon { width: 72px; height: 72px; border-radius: 18px; background: linear-gradient(135deg, var(--primary), var(--secondary)); display: flex; align-items: center; justify-content: center; font-size: 32px; margin-bottom: 20px; box-shadow: 0 8px 24px rgba(99, 102, 241, 0.3); }
+        .game-name { font-size: 1.25rem; font-weight: 600; margin-bottom: 8px; text-align: center; }
+        .game-desc { font-size: 0.875rem; color: var(--text-muted); text-align: center; line-height: 1.5; }
+        .game-arrow { margin-top: 16px; width: 40px; height: 40px; border-radius: 50%; background: rgba(255, 255, 255, 0.1); display: flex; align-items: center; justify-content: center; transition: all 0.3s; }
+        .game-card:hover .game-arrow { background: var(--primary); transform: translateX(4px); }
+        footer { text-align: center; margin-top: 60px; padding: 24px; color: var(--text-muted); font-size: 0.875rem; }
+        @media (max-width: 640px) { .container { padding: 24px 16px; } .game-grid { grid-template-columns: 1fr; gap: 16px; } .game-card { padding: 24px 20px; } .game-icon { width: 56px; height: 56px; font-size: 24px; } }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        .game-card { animation: fadeInUp 0.5s ease forwards; opacity: 0; }
+        .game-card:nth-child(1) { animation-delay: 0.05s; } .game-card:nth-child(2) { animation-delay: 0.1s; } .game-card:nth-child(3) { animation-delay: 0.15s; } .game-card:nth-child(4) { animation-delay: 0.2s; } .game-card:nth-child(5) { animation-delay: 0.25s; } .game-card:nth-child(6) { animation-delay: 0.3s; } .game-card:nth-child(7) { animation-delay: 0.35s; } .game-card:nth-child(8) { animation-delay: 0.4s; } .game-card:nth-child(9) { animation-delay: 0.45s; } .game-card:nth-child(10) { animation-delay: 0.5s; } .game-card:nth-child(11) { animation-delay: 0.55s; } .game-card:nth-child(12) { animation-delay: 0.6s; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header><h1>🎮 遊戲選單</h1><p class="subtitle">點擊開始遊戲</p></header>
+        <div class="game-grid">
+            <a href="123/" class="game-card"><div class="game-icon">🎯</div><div class="game-name">123 遊戲</div><div class="game-desc">經典數字遊戲</div><div class="game-arrow">→</div></a>
+            <a href="3D投籃球機/" class="game-card"><div class="game-icon">🏀</div><div class="game-name">3D 投籃球機</div><div class="game-desc">緊張刺激的籃球投籃遊戲</div><div class="game-arrow">→</div></a>
+            <a href="EmojiRacer/" class="game-card"><div class="game-icon">🏎️</div><div class="game-name">Emoji Racer</div><div class="game-desc">emoji 賽車大對決</div><div class="game-arrow">→</div></a>
+            <a href="gals-panic-pwa/" class="game-card"><div class="game-icon">🃏</div><div class="game-name">Gals Panic</div><div class="game-desc">益智配對遊戲</div><div class="game-arrow">→</div></a>
+            <a href="goldHunt/" class="game-card"><div class="game-icon">💰</div><div class="game-name">黃金獵人</div><div class="game-desc">開採黃金挑戰</div><div class="game-arrow">→</div></a>
+            <a href="Moon-Blaster/" class="game-card"><div class="game-icon">🌙</div><div class="game-name">Moon Blaster</div><div class="game-desc">太空射擊遊戲</div><div class="game-arrow">→</div></a>
+            <a href="pwa-gacha/" class="game-card"><div class="game-icon">🎰</div><div class="game-name">PWA 扭蛋</div><div class="game-desc">日系扭蛋機</div><div class="game-arrow">→</div></a>
+            <a href="store-game/" class="game-card"><div class="game-icon">🏪</div><div class="game-name">商店遊戲</div><div class="game-desc">經營你的商店</div><div class="game-arrow">→</div></a>
+            <a href="Swipe/" class="game-card"><div class="game-icon">👆</div><div class="game-name">Swipe 滑動</div><div class="game-desc">滑動消除遊戲</div><div class="game-arrow">→</div></a>
+            <a href="唐詩三百首/" class="game-card"><div class="game-icon">📚</div><div class="game-name">唐詩三百首</div><div class="game-desc">經典詩詞學習</div><div class="game-arrow">→</div></a>
+            <a href="Generated/" class="game-card"><div class="game-icon">🎲</div><div class="game-name">Generated 遊戲</div><div class="game-desc">隨機生成遊戲</div><div class="game-arrow">→</div></a>
+            <a href="Generated2/" class="game-card"><div class="game-icon">✨</div><div class="game-name">Generated 2</div><div class="game-desc">第二代生成遊戲</div><div class="game-arrow">→</div></a>
+        </div>
+        <footer><p>© 2026 Study666 - 讓學習更有趣</p></footer>
+    </div>
+</body>
+</html>
